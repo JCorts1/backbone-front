@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backbone </title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div id="app" class="container">
+        <h1>Jay's Backbone Blog</h1>
+        <hr>
+
+        <!-- This is a "signpost". Backbone will look for this ID to insert the list of all posts. -->
+        <div id="posts-container"></div>
+
+        <!-- This is another "signpost". Backbone will use this to show a single, detailed post. -->
+        <div id="post-detail-container"></div>
+    </div>
+
+    <!-- TEMPLATES: The browser ignores these because of their 'type'. We will grab them with JavaScript. -->
+    <script type="text/template" id="post-list-item-template">
+        <div class="post-item">
+            <h2><%= title %></h2>
+        </div>
+    </script>
+
+    <script type="text/template" id="post-detail-template">
+        <div class="post-detail">
+            <h2><%= title %></h2>
+            <p><%= content %></p>
+            <a href="#" class="back-link">&larr; Back to posts</a>
+        </div>
+    </script>
+
+
+    <!-- LIBRARIES: These must be loaded BEFORE our app.js file. -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.1/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.4.0/backbone-min.js"></script>
+
+    <!-- OUR APPLICATION CODE -->
+    <script src="app.js"></script>
+
+</body>
+</html>
